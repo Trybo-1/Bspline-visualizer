@@ -11,8 +11,8 @@ def plot(control_points, curve_points):
 
 
     plt.plot(
-        curve_points[:, 0],
-        curve_points[:, 1],
+        curve_points[:-1, 0],
+        curve_points[:-1, 1],
         label="B-spline"
     )
 

@@ -1,19 +1,30 @@
 import matplotlib.pyplot as plt
 
-print("Plotting points...")
-points = [
-    (0, 0),  # P0
-    (1, 3),  # P1
-    (3, 3),  # P2
-    (4, 0)   # P3
-]
+def plot(control_points, curve_points):
 
-x = [point[0] for point in points]
-y = [point[1] for point in points]
+    plt.plot(
+        control_points[:, 0],
+        control_points[:, 1],
+        "o--",
+        label="Control polygon"
+    )
 
-plt.plot(x, y, "o")
-plt.title("Plot of Points")
-plt.xlabel("X-axis")
-plt.ylabel("Y-axis")
-plt.grid()
-plt.show()
+
+    plt.plot(
+        curve_points[:, 0],
+        curve_points[:, 1],
+        label="B-spline"
+    )
+
+
+    plt.title("B-Spline")
+
+    plt.xlabel("X")
+
+    plt.ylabel("Y")
+
+    plt.grid()
+
+    plt.legend()
+
+    plt.show()
